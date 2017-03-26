@@ -2,6 +2,7 @@ import argparse
 import os
 import time
 import logging
+from datetime import datetime
 import torch
 import torch.nn as nn
 import torch.nn.parallel
@@ -13,9 +14,7 @@ from torch.autograd import Variable
 from data import get_dataset
 from preprocess import get_transform
 from utils import *
-from datetime import datetime
 from ast import literal_eval
-from torchvision.utils import save_image
 
 model_names = sorted(name for name in models.__dict__
                      if name.islower() and not name.startswith("__")
@@ -23,8 +22,8 @@ model_names = sorted(name for name in models.__dict__
 
 parser = argparse.ArgumentParser(description='PyTorch ConvNet Training')
 
-parser.add_argument('--results_dir', metavar='RESULTS_DIR', default='./results',
-                    help='results dir')
+parser.add_argument('--results_dir', metavar='RESULTS_DIR',
+                    default='/media/drive/TrainingResults', help='results dir')
 parser.add_argument('--save', metavar='SAVE', default='',
                     help='saved folder')
 parser.add_argument('--dataset', metavar='DATASET', default='imagenet',
