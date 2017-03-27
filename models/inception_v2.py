@@ -68,7 +68,7 @@ class InceptionModule(nn.Module):
 class Inception_v2(nn.Module):
 
     def __init__(self, num_classes=1000, aux_classifiers=True):
-        super(inception_v2, self).__init__()
+        super(Inception_v2, self).__init__()
         self.num_classes = num_classes
         self.part1 = nn.Sequential(
             nn.Conv2d(3, 64, 7, 2, 3, bias=False),
